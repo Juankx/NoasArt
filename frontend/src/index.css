@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+}
+
+/* Estilos para botones */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium;
+}
+
+.btn-secondary {
+  @apply bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium;
+}
+
+.btn-success {
+  @apply bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium;
+}
+
+/* Estilos para impresión */
+@media print {
+  /* Ocultar elementos que no deben imprimirse */
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Asegurar que el contenido se imprima correctamente */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+  
+  /* Estilos específicos para cotizaciones */
+  .print-cotizacion {
+    page-break-inside: avoid;
+  }
+  
+  /* Asegurar que las tablas se impriman correctamente */
+  table {
+    page-break-inside: auto;
+  }
+  
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  
+  /* Estilos para el header de la empresa */
+  .company-header {
+    page-break-after: avoid;
+  }
+  
+  /* Estilos para los totales */
+  .totals-section {
+    page-break-before: avoid;
+  }
+  
+  /* Asegurar que el footer se imprima en la última página */
+  .print-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+/* Estilos para el modal de impresión */
+.print-modal {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50;
+}
+
+.print-content {
+  @apply bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto;
+}
+
+/* Estilos para tablas de impresión */
+.print-table {
+  @apply w-full border border-gray-300;
+}
+
+.print-table th,
+.print-table td {
+  @apply border border-gray-300 px-4 py-2;
+}
+
+.print-table th {
+  @apply bg-gray-50 font-semibold;
+}
+
+/* Estilos para el header de la empresa en impresión */
+.print-company-header {
+  @apply text-center border-b-2 border-gray-300 pb-6 mb-8;
+}
+
+.print-company-name {
+  @apply text-3xl font-bold text-blue-600 mb-2;
+}
+
+.print-quote-number {
+  @apply text-xl font-semibold text-gray-800 mt-4;
+}
+
+/* Estilos para secciones de impresión */
+.print-section {
+  @apply mb-8;
+}
+
+.print-section-title {
+  @apply text-lg font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-2;
+}
+
+/* Estilos para totales en impresión */
+.print-totals {
+  @apply border-t-2 border-gray-300 pt-6;
+}
+
+.print-total-row {
+  @apply flex justify-between items-center text-lg font-semibold;
+}
+
+.print-grand-total {
+  @apply flex justify-between items-center text-2xl font-bold mt-4 pt-4 border-t-2 border-gray-300;
+}
+
+/* Estilos para el footer de impresión */
+.print-footer-content {
+  @apply mt-12 text-center text-gray-600 text-sm;
+}
